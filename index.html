@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Стоматология 24 часа на юге Москвы - демо сайта</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Golos+Text:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f3f5f6;--s1:#ffffff;--s2:#e7ecee;--ink:#0d1b22;--mut:#51606a;--acc:#1f5eff;--acc2:#e8f0ff;--ok:#12a46b;--m:clamp(16px,2.4vw,36px);--ease:cubic-bezier(.2,.8,.2,1)}
+body.night{--bg:#0b1218;--s1:#121c24;--s2:#1a2630;--ink:#e8eef2;--mut:#9aa9b3;--acc:#5b8cff;--acc2:#16233a}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font:400 17px/1.55 "Golos Text",system-ui,sans-serif;overflow-x:hidden;transition:background .8s,color .8s}
+a{color:inherit}
+.wrap{max-width:1280px;margin:0 auto;padding:0 var(--m)}
+nav{display:flex;justify-content:space-between;align-items:center;padding:16px 0;gap:14px}
+.logo{font:700 18px Unbounded;letter-spacing:-.02em;text-decoration:none}.logo b{color:var(--acc)}
+nav ul{display:flex;gap:24px;list-style:none;font-size:15px}nav ul a{text-decoration:none;color:var(--mut)}nav ul a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--acc);color:#fff;border:0;padding:15px 22px;font:700 16px "Golos Text";text-decoration:none;cursor:pointer;border-radius:999px;transition:transform .2s var(--ease),filter .2s}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.08)}
+.btn.ghost{background:var(--s2);color:var(--ink)}
+.mode{background:var(--s2);border:0;color:var(--ink);padding:9px 14px;border-radius:999px;font:500 14px "Golos Text";cursor:pointer}
+/* hero */
+.hero{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:clamp(20px,4vw,56px);padding:clamp(20px,4vw,50px) 0 clamp(60px,8vw,110px);align-items:center}
+.live{display:inline-flex;align-items:center;gap:10px;font-weight:500;margin-bottom:18px;color:var(--mut)}
+.live i{width:10px;height:10px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 0 rgba(18,164,107,.5);animation:pulse 2s infinite}
+@keyframes pulse{to{box-shadow:0 0 0 12px rgba(18,164,107,0)}}
+h1{font:700 clamp(32px,4.3vw,62px)/1.02 Unbounded;letter-spacing:-.04em}
+.lead{color:var(--mut);font-size:19px;margin:20px 0 28px;max-width:46ch}
+.clock{background:var(--s1);border-radius:28px;padding:clamp(22px,3vw,36px);position:relative;overflow:hidden;transition:background .8s}
+.clock .t{position:relative;font:700 clamp(64px,9vw,128px)/.9 Unbounded;letter-spacing:-.05em;font-variant-numeric:tabular-nums}
+.clock .now{margin-top:14px;font-size:18px}
+.clock .now b{color:var(--acc)}
+.clock ul{position:relative;list-style:none;margin-top:22px;display:grid;gap:8px}
+.clock li{display:flex;justify-content:space-between;gap:10px;padding:12px 14px;background:var(--s2);border-radius:14px;font-size:16px}
+.clock li span{color:var(--mut)}
+.sky{position:absolute;right:-70px;bottom:-70px;width:200px;height:200px;border-radius:50%;background:#ffd25e;opacity:.9;transition:background .8s,box-shadow .8s;box-shadow:0 0 80px #ffd25e}
+.night .sky{background:#dfe6f0;box-shadow:0 0 40px #8fa6c4;width:150px;height:150px;right:-45px;bottom:-45px}
+/* services */
+section{padding:clamp(80px,10vw,140px) 0 0}
+h2{font:700 clamp(28px,3.6vw,48px)/1.05 Unbounded;letter-spacing:-.035em;margin-bottom:12px}
+.sub{color:var(--mut);max-width:58ch;margin-bottom:32px}
+.svc{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.sv{background:var(--s1);border-radius:22px;padding:24px;display:flex;flex-direction:column;gap:8px;transition:transform .3s var(--ease),background .8s}
+.sv:hover{transform:translateY(-4px)}
+.sv h3{font:700 21px/1.2 "Golos Text"}
+.sv p{color:var(--mut);font-size:16px;flex:1}
+.sv .pr{font:700 20px Unbounded;letter-spacing:-.02em}
+.sv.big{grid-column:span 2;background:var(--acc);color:#fff}.sv.big p{color:#dbe5ff}
+/* districts */
+.dist{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(20px,4vw,50px);align-items:start}
+.dl{display:flex;flex-wrap:wrap;gap:8px}
+.dl button{background:var(--s1);border:0;color:var(--ink);padding:12px 16px;border-radius:999px;font:500 16px "Golos Text";cursor:pointer;transition:background .25s,color .25s}
+.dl button.on{background:var(--ink);color:var(--bg)}
+.page{background:var(--s1);border-radius:24px;padding:clamp(20px,3vw,32px);transition:background .8s}
+.page .url{font-size:14px;color:var(--mut);margin-bottom:12px}
+.page h3{font:700 clamp(22px,2.4vw,30px)/1.15 Unbounded;letter-spacing:-.03em}
+.page p{color:var(--mut);margin-top:10px}
+.page .row{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.page .row span{background:var(--s2);padding:9px 12px;border-radius:12px;font-size:15px}
+/* doctors */
+.docs{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.doc{background:var(--s1);border-radius:22px;padding:22px;transition:background .8s}
+.doc .av{width:64px;height:64px;border-radius:50%;background:var(--acc2);color:var(--acc);display:grid;place-items:center;font:700 22px Unbounded;margin-bottom:14px}
+.doc b{display:block;font-size:18px}.doc span{color:var(--mut);font-size:15px}
+/* articles */
+.arts{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.art{background:var(--s1);border-radius:22px;padding:24px;text-decoration:none;transition:transform .3s var(--ease),background .8s}
+.art:hover{transform:translateY(-4px)}
+.art small{color:var(--acc);font-weight:700}
+.art h3{font:700 19px/1.3 "Golos Text";margin-top:8px}
+/* booking */
+.book{background:var(--ink);color:var(--bg);border-radius:32px;margin-top:clamp(80px,10vw,140px);padding:clamp(28px,5vw,60px);display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center;transition:background .8s,color .8s}
+.book h2{color:var(--bg)}
+.slots{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0}
+.slots button{border:0;background:rgba(127,140,150,.22);color:inherit;padding:11px 14px;border-radius:12px;font:500 15px "Golos Text";cursor:pointer}
+.slots button.on{background:var(--acc);color:#fff}
+.book input{width:100%;padding:16px;border-radius:14px;border:0;font:500 17px "Golos Text";margin-bottom:10px}
+footer{padding:30px 0 90px;color:var(--mut);font-size:14px}
+.sticky{position:fixed;left:12px;right:12px;bottom:12px;z-index:30;display:none;gap:8px}
+.sticky .btn{flex:1}
+.js .rv{opacity:0;transform:translateY(22px);transition:opacity .7s var(--ease),transform .7s var(--ease)}.js .rv.in{opacity:1;transform:none}
+@media(max-width:900px){nav ul{display:none}.hero,.dist,.book{grid-template-columns:1fr}.svc,.arts{grid-template-columns:1fr}.sv.big{grid-column:auto}.docs{grid-template-columns:1fr 1fr}.sticky{display:flex}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.js .rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav><a class="logo" href="#">Дент<b>24</b></a><ul><li><a href="#svc">Услуги и цены</a></li><li><a href="#docs">Врачи</a></li><li><a href="#dist">Районы</a></li><li><a href="#arts">Статьи</a></li></ul><button class="mode" id="mode" type="button">Ночной режим</button></nav>
+<header class="hero">
+ <div>
+  <div class="live"><i></i><span id="lv">Открыто сейчас - круглосуточно</span></div>
+  <h1>Стоматология, которая не закрывается</h1>
+  <p class="lead">Юг Москвы. Лечим днём и ночью, делаем КТ на месте за 15 минут - без поездок в диагностический центр.</p>
+  <div style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn" href="#book">Записаться онлайн</a><a class="btn ghost" href="#svc">Цены</a></div>
+ </div>
+ <div class="clock rv"><div class="sky"></div>
+  <div class="t" id="tm">00:00</div>
+  <div class="now" id="now"></div>
+  <ul><li>КТ челюсти<span>15 минут, на месте</span></li><li>Острая боль<span>приём без записи</span></li><li>Ближайшая запись<span id="slot">-</span></li></ul>
+ </div>
+</header>
+
+<section id="svc" style="padding-top:0">
+ <h2 class="rv">Услуги и цены</h2>
+ <p class="sub rv">Цены - на отдельных страницах услуг, чтобы их находили в поиске. Ночью стоимость не меняется.</p>
+ <div class="svc">
+  <div class="sv big rv"><h3>Экстренная помощь 24/7</h3><p>Острая боль, флюс, травма зуба - приём без записи в любое время суток, КТ на месте.</p><div class="pr">от 2 500 ₽</div></div>
+  <div class="sv rv"><h3>КТ челюсти</h3><p>3D-снимок за 15 минут, расшифровка врачом.</p><div class="pr">от 2 900 ₽</div></div>
+  <div class="sv rv"><h3>Лечение кариеса</h3><p>Анестезия, пломба светового отверждения.</p><div class="pr">от 4 500 ₽</div></div>
+  <div class="sv rv"><h3>Удаление зубов</h3><p>Включая сложные и зубы мудрости.</p><div class="pr">от 3 500 ₽</div></div>
+  <div class="sv rv"><h3>Имплантация</h3><p>Планирование по КТ, имплант под ключ.</p><div class="pr">от 39 000 ₽</div></div>
+ </div>
+</section>
+
+<section id="dist">
+ <div class="dist">
+  <div><h2 class="rv">Рядом с вами</h2><p class="sub rv">Отдельная страница под каждый соседний район - так клиника появляется в поиске по запросу «стоматология 24 часа + район». Выберите район.</p><div class="dl rv" id="dl"></div></div>
+  <div class="page rv" id="page"></div>
+ </div>
+</section>
+
+<section id="docs">
+ <h2 class="rv">Врачи</h2>
+ <p class="sub rv">Карточка врача: стаж, специализация, расписание смен - видно, кто дежурит этой ночью.</p>
+ <div class="docs" id="docsl"></div>
+</section>
+
+<section id="arts">
+ <h2 class="rv">Статьи для пациентов</h2>
+ <p class="sub rv">Блог отвечает на частые вопросы и приводит людей из поиска.</p>
+ <div class="arts">
+  <a class="art rv" href="#"><small>Острая боль</small><h3>Что делать, если зуб заболел ночью</h3></a>
+  <a class="art rv" href="#"><small>Диагностика</small><h3>КТ или обычный снимок: когда что нужно</h3></a>
+  <a class="art rv" href="#"><small>Имплантация</small><h3>Сколько стоит имплант в Москве и из чего складывается цена</h3></a>
+ </div>
+</section>
+
+<div class="book rv" id="book">
+ <div><h2>Запись за 30 секунд</h2><p style="opacity:.75">Выберите время - администратор перезвонит и подтвердит. Ночью тоже.</p><div class="slots" id="slots"></div></div>
+ <form onsubmit="event.preventDefault();this.querySelector('button').textContent='Заявка принята';"><input placeholder="Имя"><input placeholder="Телефон" inputmode="tel"><button class="btn" style="width:100%" type="submit">Записаться</button></form>
+</div>
+</div>
+<div class="wrap"><footer>Демо сайта стоматологии: название, цены, районы и врачи условные - в работе будут ваши данные.</footer></div>
+<div class="sticky"><a class="btn" href="#book">Записаться</a><a class="btn ghost" href="tel:+70000000000">Позвонить</a></div>
+<script>
+document.documentElement.classList.add('js');
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});
+document.querySelectorAll('.rv').forEach(x=>io.observe(x));
+let manual=null;
+function tick(){const d=new Date(),h=d.getHours();document.getElementById('tm').textContent=d.toLocaleTimeString('ru-RU',{hour:'2-digit',minute:'2-digit'});
+ const night=manual!==null?manual:(h>=21||h<7);document.body.classList.toggle('night',night);document.getElementById('mode').textContent=night?'Дневной режим':'Ночной режим';
+ document.getElementById('now').innerHTML=night?'Ночь - а мы <b>принимаем</b>. Дежурный врач и КТ работают.':'День - <b>принимаем</b> все направления. Запись на сегодня открыта.';
+ const n=new Date(d.getTime()+40*60000);n.setMinutes(Math.ceil(n.getMinutes()/30)*30);document.getElementById('slot').textContent='сегодня в '+n.toLocaleTimeString('ru-RU',{hour:'2-digit',minute:'2-digit'})}
+tick();setInterval(tick,15000);
+document.getElementById('mode').onclick=()=>{manual=!document.body.classList.contains('night');tick()};
+const D=[['Чертаново',7,'Чертановская'],['Бирюлёво',9,'Царицыно'],['Царицыно',8,'Царицыно'],['Братеево',11,'Борисово'],['Орехово',6,'Орехово'],['Зябликово',10,'Зябликово'],['Нагатино',12,'Нагатинская']];
+const dl=document.getElementById('dl'),pg=document.getElementById('page');
+function pick(i){[...dl.children].forEach((b,k)=>b.classList.toggle('on',k===i));const [n,m,st]=D[i];const slug=n.toLowerCase().replace('ё','e').replace(/[^a-zа-я]/g,'');
+ pg.innerHTML=`<div class="url">vash-sait.ru/stomatologiya-24-chasa/${slug}</div><h3>Стоматология 24 часа в районе ${n}</h3><p>Круглосуточный приём рядом с ${n === 'Царицыно' ? 'парком Царицыно' : 'вашим домом'}: ${m} минут на такси, рядом метро «${st}». КТ на месте, экстренная помощь без записи.</p><div class="row"><span>${m} мин. на такси</span><span>м. ${st}</span><span>открыто 24/7</span></div>`;pg.animate([{opacity:0,transform:'translateY(10px)'},{opacity:1,transform:'none'}],{duration:400,easing:'ease-out'})}
+D.forEach((d,i)=>{const b=document.createElement('button');b.type='button';b.textContent=d[0];b.onclick=()=>pick(i);dl.appendChild(b)});pick(0);
+const DR=[['А','Терапевт','стаж 12 лет','дежурит ночью сегодня'],['М','Хирург-имплантолог','стаж 15 лет','дневные смены'],['Е','Детский стоматолог','стаж 8 лет','дневные смены'],['И','Ортопед','стаж 10 лет','дежурит в выходные']];
+document.getElementById('docsl').innerHTML=DR.map(([a,s,e,w],i)=>`<div class="doc rv"><div class="av">${a}</div><b>${s}</b><span>${e}<br>${w}</span></div>`).join('');document.querySelectorAll('#docsl .rv').forEach(x=>io.observe(x));
+const sl=document.getElementById('slots');const base=new Date();base.setMinutes(Math.ceil(base.getMinutes()/30)*30+60);
+for(let i=0;i<6;i++){const t=new Date(base.getTime()+i*90*60000);const b=document.createElement('button');b.type='button';b.textContent=t.toLocaleTimeString('ru-RU',{hour:'2-digit',minute:'2-digit'});b.onclick=()=>{[...sl.children].forEach(x=>x.classList.toggle('on',x===b))};sl.appendChild(b)}
+</script>
+</body>
+</html>
